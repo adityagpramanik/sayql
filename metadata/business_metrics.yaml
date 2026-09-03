@@ -1,0 +1,18 @@
+key_metrics:
+  - facilities_per_district
+  - facility_type_distribution
+  - location_type_distribution
+  - public_facilities_by_state
+  - rural_facilities_by_state
+
+facility_types:
+  - chc
+  - dis_h
+  - phc
+  - sub_cen
+  - s_t_h
+
+location_types:
+  - rural
+  - urban
+  - public

@@ -1,0 +1,48 @@
+{
+  "tables": {
+    "district": [
+      {"name": "id", "type": "integer", "nullable": false},
+      {"name": "name", "type": "character varying", "nullable": true}
+    ],
+    "states": [
+      {"name": "id", "type": "integer", "nullable": false},
+      {"name": "name", "type": "character varying", "nullable": true}
+    ],
+    "sub_district": [
+      {"name": "id", "type": "integer", "nullable": false},
+      {"name": "name", "type": "character varying", "nullable": true}
+    ],
+    "facility": [
+      {"name": "id", "type": "integer", "nullable": false},
+      {"name": "state_id", "type": "integer", "nullable": true},
+      {"name": "district_id", "type": "integer", "nullable": true},
+      {"name": "sub_district_id", "type": "integer", "nullable": true},
+      {"name": "type", "type": "facility_type", "nullable": true},
+      {"name": "name", "type": "character varying", "nullable": true},
+      {"name": "address", "type": "text", "nullable": true},
+      {"name": "latitude", "type": "character varying", "nullable": true},
+      {"name": "longitude", "type": "character varying", "nullable": true},
+      {"name": "location_type", "type": "location_type", "nullable": true}
+    ]
+  },
+  "relationships": {
+    "facility.state_id": {
+      "source_table": "facility",
+      "source_column": "state_id",
+      "target_table": "states",
+      "target_column": "id"
+    },
+    "facility.district_id": {
+      "source_table": "facility",
+      "source_column": "district_id",
+      "target_table": "district",
+      "target_column": "id"
+    },
+    "facility.sub_district_id": {
+      "source_table": "facility",
+      "source_column": "sub_district_id",
+      "target_table": "sub_district",
+      "target_column": "id"
+    }
+  }
+}
