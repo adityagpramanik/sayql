@@ -92,10 +92,8 @@ def submit_query(question: str = Form(...)) -> HTMLResponse:
                 sql = generate_sql(question)
                 rows = execute_query(sql)
                 return HTMLResponse(render_query_page(question=question, results=rows))
-        except ValueError as exc:
-                return HTMLResponse(render_query_page(question=question, error=str(exc)), status_code=400)
-        except Exception as exc:  # pragma: no cover - defensive failure path
-                return HTMLResponse(render_query_page(question=question, error=f"Query execution failed: {exc}"), status_code=500)
+        except:
+                return HTMLResponse(render_query_page(question=question, error="Query execution failed"), status_code=500)
 
 
 @app.get("/health")
