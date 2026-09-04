@@ -8,7 +8,7 @@ ENV PYTHONUNBUFFERED=1
 COPY . /app
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir "fastapi>=0.115.0" "uvicorn[standard]>=0.30.0" "sqlalchemy>=2.0.0" "psycopg[binary]>=3.1.0" "pydantic-settings>=2.0.0" "requests>=2.32.0" "pytest>=8.0.0"
+    pip install --no-cache-dir "fastapi>=0.115.0" "uvicorn[standard]>=0.30.0" "python-multipart>=0.0.20" "sqlalchemy>=2.0.0" "psycopg[binary]>=3.1.0" "pydantic-settings>=2.0.0" "requests>=2.32.0" "pytest>=8.0.0"
 
 EXPOSE 8000
 
