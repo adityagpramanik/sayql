@@ -1,3 +1,15 @@
-from app.llm.client import OllamaClient, ollama_client
+from app.llm.client import (
+	LLMClient,
+	OllamaClient,
+	OpenRouterClient,
+	create_llm_client,
+	llm_client,
+)
 
-__all__ = ["OllamaClient", "ollama_client"]
+__all__ = [
+	"LLMClient",
+	"OllamaClient",
+	"OpenRouterClient",
+	"create_llm_client",
+	"llm_client",
+]

@@ -6,7 +6,7 @@ A local-first Natural Language to SQL application for PostgreSQL healthcare faci
 - FastAPI backend
 - PostgreSQL metadata inspection
 - SQLAlchemy connection pooling
-- Ollama-backed SQL generation
+- Configurable Ollama or OpenRouter SQL generation
 - Read-only query execution
 - schema and SQL validation layers
 
@@ -22,7 +22,8 @@ A local-first Natural Language to SQL application for PostgreSQL healthcare faci
 3. Copy environment file:
    cp .env.example .env
 
-4. Update database settings in `.env` if needed.
+4. Update database and LLM settings in `.env` if needed. Set `LLM_PROVIDER=openrouter`
+   and provide `OPENROUTER_API_KEY` to use OpenRouter.
 
 5. Run the app:
    uvicorn app.main:app --reload
@@ -43,4 +44,5 @@ Example request:
 ```
 
 ## Notes
-This project is intentionally lightweight and uses direct SQLAlchemy + Ollama integration without LangChain or LlamaIndex.
+This project is intentionally lightweight and uses direct SQLAlchemy and HTTP LLM
+integrations without LangChain or LlamaIndex.

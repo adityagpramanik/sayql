@@ -13,6 +13,7 @@ except ImportError:  # pragma: no cover
 
 
 class Settings(BaseSettings):
+    LLM_PROVIDER: str = "ollama"
     DATABASE_URL: Optional[str] = None
     POSTGRES_USER: str = "postgres"
     POSTGRES_PASSWORD: str = "password"
@@ -21,6 +22,9 @@ class Settings(BaseSettings):
     POSTGRES_DB: str = "database_name"
     OLLAMA_URL: str = "http://localhost:11434"
     OLLAMA_MODEL: str = "qwen3:8b"
+    OPENROUTER_URL: str = "https://openrouter.ai/api/v1"
+    OPENROUTER_API_KEY: Optional[str] = None
+    OPENROUTER_MODEL: str = "minimax/minimax-m3:free"
 
     model_config = ConfigDict(
         env_file=str(Path(__file__).resolve().parents[1] / ".env"),
