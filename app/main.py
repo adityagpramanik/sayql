@@ -8,7 +8,7 @@ app.include_router(query_router)
 
 @app.get("/")
 def root() -> dict[str, str]:
-    return {"message": "NL Data Analyst API is running"}
+    return {"message": "SayQL API is running"}
 
 
 @app.get("/health")
