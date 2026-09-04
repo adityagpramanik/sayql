@@ -8,4 +8,5 @@ from app.query_former.sql_compiler import compile_query
 def generate_sql(question: str) -> str:
     prompt = PROMPT_TEMPLATE.format(question=question)
     raw_sql = llm_client.generate(prompt)
+    print('query generated successfully.')
     return compile_query(raw_sql)

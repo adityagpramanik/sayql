@@ -92,7 +92,8 @@ def submit_query(question: str = Form(...)) -> HTMLResponse:
                 sql = generate_sql(question)
                 rows = execute_query(sql)
                 return HTMLResponse(render_query_page(question=question, results=rows))
-        except:
+        except Exception as e:
+                print(f"unable to process query: {e}")
                 return HTMLResponse(render_query_page(question=question, error="Query execution failed"), status_code=500)
 
 

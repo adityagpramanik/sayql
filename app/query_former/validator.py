@@ -27,5 +27,5 @@ def validate_sql(sql: str) -> str:
     for token in forbidden:
         if token in lowered:
             raise ValueError("Unsafe SQL detected.")
-
+    print('generated query validated.')
     return cleaned
